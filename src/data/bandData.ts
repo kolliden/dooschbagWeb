@@ -1,7 +1,7 @@
 
 const bandData = {
     hero: {
-        video: "/media/punk-band-bg.mp4",
+        video: "/media/bg-vid-comp.mp4",
         image: "/media/dooschbag-bg.png",
     },
     mission:

@@ -10,7 +10,7 @@ export default function AboutBand() {
         />
         <section className="relative bg-[#200000] text-white py-16 px-6 min-h-screen flex flex-row" id="about">
             {/* Left Ad Banner */}
-            <div className="sticky top-24 left-6 w-24 h-48 ml-16 bg-zinc-800 border border-pink-500 rounded-md hidden lg:block absolute">
+            <div className="sticky top-24 left-6 w-24 h-48 ml-16 bg-zinc-800 border border-pink-500 rounded-md hidden lg:block">
                 <div className="flex items-center justify-center h-full text-center p-2">
                     <span className="text-pink-400 font-bold text-sm">AD PLACEHOLDER</span>
                 </div>
@@ -32,7 +32,7 @@ export default function AboutBand() {
             </div>
 
             {/* Right Ad Banner */}
-            <div className="sticky top-24 right-6 w-24 h-48 mr-16 bg-zinc-800 border border-pink-500 rounded-md hidden lg:block absolute">
+            <div className="sticky top-24 right-6 w-24 h-48 mr-16 bg-zinc-800 border border-pink-500 rounded-md hidden lg:block">
                 <div className="flex items-center justify-center h-full text-center p-2">
                     <span className="text-pink-400 font-bold text-sm">AD PLACEHOLDER</span>
                 </div>
