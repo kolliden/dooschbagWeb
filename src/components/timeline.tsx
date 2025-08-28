@@ -29,6 +29,7 @@ export default function Timeline() {
 interface TimelineEvent {
     date: string;
     venue: string;
+    image?: string;
 }
 
 interface TimelineItemProps {
@@ -36,7 +37,7 @@ interface TimelineItemProps {
     isLeft: boolean;
 }
 
-function TimelineItem({ event, isLeft }: any) {
+function TimelineItem({ event, isLeft }: TimelineItemProps) {
     const { ref, inView } = useInView({ threshold: 0.3, triggerOnce: true });
 
     return (
