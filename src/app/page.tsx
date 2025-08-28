@@ -1,103 +1,136 @@
-import Image from "next/image";
+// app/page.tsx — Dark, Myspace-inspired punk band homepage with video card, marquee, neon borders,
+// glitter cursor, and grunge vibes. Drop this into your Next.js App Router project.
+"use client";
+import React, { useEffect, useMemo, useRef, useState } from "react";
+import Header from "@/components/nav";
+import Hero from "@/components/hero";
+import XXXDivider from "@/components/XXXdevider";
+import AboutBand from "@/components/aboutBand";
+import Timeline from "@/components/timeline";
+import MailingList from "@/components/mailingList";
+import Footer from "@/components/footer";
+import Members from "@/components/members";
 
-export default function Home() {
+import "./globals.css";
+
+
+export default function HomePage() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+    <main className="min-h-dvh bg-[#0a0a0a] text-white grunge-bg">
+      <NoiseOverlay />
+      <Scanlines />
+      <Header />
+      <Hero />
+      <AboutBand />
+      <Timeline />
+      <XXXDivider />
+      <MailingList />
+      <XXXDivider />
+      <Members />
+      <Footer />
+      <GlitterCursor />
+      <style jsx global>{`
+        @keyframes marquee {
+          from { transform: translateX(0); }
+          to { transform: translateX(-50%); }
+        }
+        @keyframes glowPulse { 0%,100%{ filter: drop-shadow(0 0 0px #ff3ea5); } 50%{ filter: drop-shadow(0 0 6px #ff3ea5); } }
+        @keyframes borderPulse { 0%{ opacity:.35 } 50%{ opacity:.9 } 100%{ opacity:.35 } }
+        @keyframes crtFlicker { 0%{opacity:.95} 5%{opacity:.7} 10%{opacity:.98} 15%{opacity:.85} 22%{opacity:.96} 50%{opacity:.9} 100%{opacity:.95} }
+        /* Fake paper/grunge using multi-layer gradients */
+        .grunge-bg {
+          background-image:
+            radial-gradient(transparent 0 60%, rgba(255,255,255,0.02)),
+            linear-gradient(transparent 0, rgba(255,255,255,0.03) 100%),
+            repeating-linear-gradient(45deg, rgba(255,255,255,0.02) 0 6px, transparent 6px 12px);
+          background-blend-mode: overlay, overlay, normal;
+        }
+        .neon-border {
+          position: relative;
+          border: 1px solid #3a3a3a;
+          border-radius: 10px;
+        }
+        .neon-border:before {
+          content: "";
+          position: absolute; inset: -2px;
+          border-radius: 12px;
+          background: conic-gradient(from 0deg,
+            #ff3ea5, #39ff14, #00e5ff, #ff3ea5);
+          filter: blur(8px);
+          opacity: .35; pointer-events: none;
+          animation: borderPulse 3.2s infinite linear;
+        }
+      `}</style>
+    </main>
   );
+}
+
+/** CRT scanlines & subtle flicker overlay */
+function Scanlines() {
+  return (
+    <div
+      aria-hidden
+      className="pointer-events-none fixed inset-0 z-[5] mix-blend-overlay opacity-40"
+      style={{
+        backgroundImage:
+          "repeating-linear-gradient(to bottom, rgba(255,255,255,.03) 0 2px, transparent 2px 4px)",
+        animation: "crtFlicker 6s infinite",
+      }}
+    />
+  );
+}
+
+/** Film/noise overlay */
+function NoiseOverlay() {
+  return (
+    <div
+      aria-hidden
+      className="pointer-events-none fixed inset-0 z-[4] opacity-20"
+      style={{
+        backgroundImage:
+          "radial-gradient(circle at 20% 30%, rgba(255,255,255,.04), transparent 40%), radial-gradient(circle at 80% 70%, rgba(255,255,255,.05), transparent 35%), radial-gradient(circle at 50% 50%, rgba(255,255,255,.03), transparent 45%)",
+      }}
+    />
+  );
+}
+
+/** Glitter cursor — lightweight particle trail following mouse */
+function GlitterCursor() {
+  const [sparks, setSparks] = useState<Array<{ id: number; x: number; y: number }>>([]);
+  const idRef = useRef(0);
+
+  useEffect(() => {
+    const onMove = (e: MouseEvent) => {
+      const id = idRef.current++;
+      setSparks((s) => [
+        ...s.slice(-40),
+        { id, x: e.clientX, y: e.clientY },
+      ]);
+    };
+    window.addEventListener("mousemove", onMove);
+    return () => window.removeEventListener("mousemove", onMove);
+  }, []);
+
+  useEffect(() => {
+    if (!sparks.length) return;
+    const t = setTimeout(() => setSparks((s) => s.slice(1)), 40);
+    return () => clearTimeout(t);
+  }, [sparks]);
+
+  const dots = useMemo(() => sparks.map((p, i) => (
+    <span
+      key={p.id}
+      className="pointer-events-none fixed z-[60] block h-1.5 w-1.5 rounded-full"
+      style={{
+        left: p.x + "px",
+        top: p.y + "px",
+        background: `radial-gradient(circle, rgba(255,255,255,1) 0 25%, rgba(255,62,165,1) 25% 60%, transparent 60%)`,
+        transform: `translate(-50%, -50%) scale(${1 - i / 50})`,
+        opacity: 1 - i / 50,
+        boxShadow: "0 0 8px #ff3ea5, 0 0 14px #39ff14",
+      }}
+    />
+  )), [sparks]);
+
+  return <>{dots}</>;
 }
