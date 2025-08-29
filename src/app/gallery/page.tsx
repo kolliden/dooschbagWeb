@@ -1,4 +1,5 @@
 "use client";
+import Header from "@/components/nav";
 import { useEffect, useState } from "react";
 
 interface ImageData {
@@ -17,11 +18,13 @@ export default function GalleryPage() {
   }, []);
 
   return (
+    <>
+    <Header />
     <main className="bg-black text-white relative">
       {/* Hero Section */}
       <section className="relative h-[50vh] w-full border-b border-red-500">
         <img
-          src={images[0]?.src || "/media/band-image.jpg"}
+          src={images[0]?.src || "/"}
           alt="Gallery Hero"
           className="w-full h-full object-cover opacity-40"
         />
@@ -67,5 +70,6 @@ export default function GalleryPage() {
         </div>
       )}
     </main>
+    </>
   );
 }
