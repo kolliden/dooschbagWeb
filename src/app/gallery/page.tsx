@@ -1,6 +1,7 @@
 "use client";
 import Header from "@/components/nav";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 interface ImageData {
   src: string;
@@ -36,17 +37,19 @@ export default function GalleryPage() {
       {/* Gallery Grid */}
       <section className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
         {images.map((img, i) => (
-          <button
+            <button
             key={i}
             onClick={() => setSelected(img)}
             className="group relative overflow-hidden rounded-md border border-red-800/40 bg-zinc-900 hover:border-red-500 transition"
-          >
-            <img
+            >
+            <Image
               src={img.src}
-              alt={img.alt}
+              alt={img.alt || ""}
+              width={400}
+              height={160}
               className="h-40 w-full object-cover group-hover:scale-105 transition duration-300"
             />
-          </button>
+            </button>
         ))}
       </section>
 
@@ -56,10 +59,13 @@ export default function GalleryPage() {
           className="fixed inset-0 bg-black/90 flex items-center justify-center z-50"
           onClick={() => setSelected(null)}
         >
-          <img
+          <Image
             src={selected.src}
-            alt={selected.alt}
-            className="max-h-[90vh] max-w-[90vw] rounded shadow-lg"
+            alt={selected.alt || ""}
+            width={1200}
+            height={900}
+            className="max-h-[90vh] max-w-[90vw] rounded shadow-lg object-contain"
+            priority
           />
           <button
             onClick={() => setSelected(null)}

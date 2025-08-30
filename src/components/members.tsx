@@ -1,6 +1,7 @@
 "use client";
 
 import bandData from "@/data/bandData";
+import Image from "next/image";
 
 export default function Members() {
     return (
@@ -15,9 +16,11 @@ export default function Members() {
                         key={i}
                         className="bg-zinc-900 rounded-md overflow-hidden shadow-lg text-center p-4"
                     >
-                        <img
+                        <Image
                             src={member.image}
                             alt={member.name}
+                            width={400}
+                            height={192}
                             className="w-full h-48 object-cover rounded-md mb-4"
                         />
                         <h3 className="text-xl font-bold text-pink-400">{member.name}</h3>

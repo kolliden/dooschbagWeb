@@ -1,6 +1,7 @@
 "use client";
 
 import bandData from "@/data/bandData";
+import Image from "next/image";
 
 export default function Hero() {
   return (
@@ -45,13 +46,15 @@ export default function Hero() {
           </div>
 
           {/* Image - Hidden on Mobile */}
-          <div className="hidden md:block md:col-span-2 bg-zinc-900 p-2 rounded-md shadow-lg">
-            <img
+            <div className="hidden md:block md:col-span-2 bg-zinc-900 p-2 rounded-md shadow-lg">
+            <Image
               src={bandData.hero.image}
               alt="Band promo"
+              width={1200}
+              height={400}
               className="w-full h-64 md:h-80 object-cover rounded-md"
             />
-          </div>
+            </div>
         </div>
       </div>
     </section>

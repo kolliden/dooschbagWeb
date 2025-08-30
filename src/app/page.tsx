@@ -1,5 +1,3 @@
-// app/page.tsx — Dark, Myspace-inspired punk band homepage with video card, marquee, neon borders,
-// glitter cursor, and grunge vibes. Drop this into your Next.js App Router project.
 "use client";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import Header from "@/components/nav";
@@ -16,7 +14,7 @@ import "./globals.css";
 
 export default function HomePage() {
   return (
-    <main className="min-h-dvh bg-[#0a0a0a] text-white grunge-bg">
+    <main className="min-h-dvh bg-[#0a0a0a] text-white">
       <Scanlines />
       <Header />
       <Hero />

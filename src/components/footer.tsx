@@ -11,9 +11,6 @@ const footerItems = [
 export default function Footer() {
   return (
     <footer className="bg-zinc-900 text-zinc-300 py-8 px-6 relative overflow-hidden">
-      {/* Optional grunge overlay */}
-      <div className="absolute inset-0 opacity-20 bg-[url('/media/grunge-texture.png')] bg-repeat pointer-events-none" />
-
       <div className="relative max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
         {/* Footer Links */}
         <ul className="flex gap-6 text-sm uppercase font-bold text-pink-400">
