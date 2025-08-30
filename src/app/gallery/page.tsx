@@ -1,5 +1,5 @@
 "use client";
-import Header from "@/components/nav";
+import Header from "@/components/navGallery";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
@@ -29,8 +29,9 @@ export default function GalleryPage() {
           alt="Gallery Hero"
           className="w-full h-full object-cover opacity-40"
         />
-        <div className="absolute inset-0 flex items-center justify-center">
+        <div className="absolute inset-0 flex flex-col items-center justify-center">
           <h1 className="text-5xl font-extrabold text-red-500">Gallery</h1>
+          <p className="mt-2 text-lg text-zinc-300">A collection of our favorite moments</p>
         </div>
       </section>
 
