@@ -24,22 +24,22 @@ const bandData = {
         {
             name: "Fionn",
             role: "Vocals",
-            image: "/media/members/fionn.jpg",
+            image: "/media/members/fionn.png",
         },
         {
             name: "Freja",
             role: "Guitar",
-            image: "/media/members/freja.jpg",
+            image: "/media/members/freja.png",
         },
         {
             name: "Leo",
             role: "Bass",
-            image: "/media/members/leo.jpg",
+            image: "/media/members/leo.png",
         },
         {
             name: "Eamon",
             role: "Drums",
-            image: "/media/members/eamon.jpg",
+            image: "/media/members/eamon.png",
         },
     ],
 };

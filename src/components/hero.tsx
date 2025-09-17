@@ -11,7 +11,7 @@ export default function Hero() {
         {/* Top Row */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {/* Video */}
-          <div className="md:col-span-2 bg-zinc-900 p-2 rounded-md shadow-lg">
+          <div className="md:col-span-2 bg-zinc-900 border border-red-900 rounded-md shadow-lg">
             <video
               src={bandData.hero.video}
               autoPlay

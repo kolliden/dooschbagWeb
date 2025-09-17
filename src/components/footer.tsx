@@ -13,7 +13,7 @@ export default function Footer() {
     <footer className="bg-zinc-900 text-zinc-300 py-8 px-6 relative overflow-hidden">
       <div className="relative max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
         {/* Footer Links */}
-        <ul className="flex gap-6 text-sm uppercase font-bold text-pink-400">
+        <ul className="flex gap-6 text-sm uppercase font-bold text-red-500">
           {footerItems.map((item) => (
             <li key={item.name}>
               <a href={item.href} className="hover:text-white transition">

@@ -15,7 +15,6 @@ import "./globals.css";
 export default function HomePage() {
   return (
     <main className="min-h-dvh bg-[#0a0a0a] text-white">
-      <Scanlines />
       <Header />
       <Hero />
       <AboutBand />
@@ -27,21 +26,6 @@ export default function HomePage() {
       <Footer />
       <GlitterCursor />
     </main>
-  );
-}
-
-/** CRT scanlines & subtle flicker overlay */
-function Scanlines() {
-  return (
-    <div
-      aria-hidden
-      className="pointer-events-none fixed inset-0 z-[5] mix-blend-overlay opacity-40"
-      style={{
-        backgroundImage:
-          "repeating-linear-gradient(to bottom, rgba(255,255,255,.03) 0 2px, transparent 2px 4px)",
-        animation: "crtFlicker 6s infinite",
-      }}
-    />
   );
 }
 
@@ -75,10 +59,10 @@ function GlitterCursor() {
       style={{
         left: p.x + "px",
         top: p.y + "px",
-        background: `radial-gradient(circle, rgba(255,255,255,1) 0 25%, rgba(255,62,165,1) 25% 60%, transparent 60%)`,
+        background: `radial-gradient(circle, rgba(255,255,255,1) 0 25%, rgba(255,0,0,1) 25% 60%, transparent 60%)`,
         transform: `translate(-50%, -50%) scale(${1 - i / 50})`,
         opacity: 1 - i / 50,
-        boxShadow: "0 0 8px #ff3ea5, 0 0 14px #39ff14",
+        boxShadow: "0 0 8px #ff0000, 0 0 14px #ff0000",
       }}
     />
   )), [sparks]);
