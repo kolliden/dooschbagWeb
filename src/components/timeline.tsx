@@ -6,7 +6,7 @@ import bandData from "@/data/bandData";
 
 export default function Timeline() {
     return (
-        <section className="relative bg-black text-white py-16 px-6">
+        <section className="relative bg-black text-white py-16 px-6" id="timeline">
             <h2 className="text-3xl font-extrabold text-red-500 text-center mb-12">
                 Gig Timeline
             </h2>

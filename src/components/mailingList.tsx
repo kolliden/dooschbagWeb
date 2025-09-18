@@ -26,7 +26,7 @@ export default function MailingList() {
     };
 
     return (
-        <section className="relative flex flex-col md:flex-row bg-black py-16 px-6 text-white items-center md:gap-x-24 gap-y-10 justify-center text-center md:text-left">
+        <section id="mailing-list" className="relative flex flex-col md:flex-row bg-black py-16 px-6 text-white items-center md:gap-x-24 gap-y-10 justify-center text-center md:text-left">
             {/* Left Text */}
             <div>
                 <h2 className="text-3xl font-extrabold text-red-500 mb-6 tracking-wider">
