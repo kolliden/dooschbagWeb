@@ -23,7 +23,7 @@ export default function AboutBand() {
 
                 {/* Center Content */}
                 <div className="max-w-sm mx-auto text-center space-y-6 z-10 relative">
-                    <h2 className="text-3xl font-extrabold text-pink-400">About The Band</h2>
+                    <h2 className="text-3xl font-extrabold text-red-500">About The Band</h2>
                     <p className="text-zinc-300">
                         We are The Anarchy Tapes, a DIY punk band from the underground scene. Our
                         music is raw, unfiltered, and full of energy. Expect chaotic guitar riffs,

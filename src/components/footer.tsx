@@ -23,11 +23,27 @@ export default function Footer() {
           ))}
         </ul>
 
-        {/* Social Icons (placeholder) */}
+        {/* Social Icons */}
         <div className="flex gap-4 mt-4 md:mt-0">
-          <a href="#" className="hover:text-white transition">IG</a>
-          <a href="#" className="hover:text-white transition">FB</a>
-          <a href="#" className="hover:text-white transition">YT</a>
+          {/* YouTube Icon */}
+          <a
+            href="https://www.youtube.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="YouTube"
+            className="hover:text-red-600 transition"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="28"
+              height="28"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              className="inline-block align-middle"
+            >
+              <path d="M23.498 6.186a2.994 2.994 0 0 0-2.108-2.116C19.228 3.5 12 3.5 12 3.5s-7.228 0-9.39.57A2.994 2.994 0 0 0 .502 6.186C0 8.36 0 12 0 12s0 3.64.502 5.814a2.994 2.994 0 0 0 2.108 2.116C4.772 20.5 12 20.5 12 20.5s7.228 0 9.39-.57a2.994 2.994 0 0 0 2.108-2.116C24 15.64 24 12 24 12s0-3.64-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+            </svg>
+          </a>
         </div>
       </div>
 

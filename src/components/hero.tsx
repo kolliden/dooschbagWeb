@@ -46,7 +46,7 @@ export default function Hero() {
           </div>
 
           {/* Image - Hidden on Mobile */}
-            <div className="hidden md:block md:col-span-2 bg-zinc-900 p-2 rounded-md shadow-lg">
+            <div className="hidden md:block md:col-span-2 bg-zinc-900 rounded-md shadow-lg border border-red-900">
             <Image
               src={bandData.hero.image}
               alt="Band promo"
