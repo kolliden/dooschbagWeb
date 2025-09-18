@@ -10,10 +10,16 @@ const footerItems = [
 
 export default function Footer() {
   return (
-    <footer className="bg-zinc-900 text-zinc-300 py-8 px-6 relative overflow-hidden">
-      <div className="relative max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-        {/* Footer Links */}
-        <ul className="flex gap-6 text-sm uppercase font-bold text-red-500">
+    <footer className="bg-zinc-900 text-zinc-300 py-8 px-4 sm:px-6 relative overflow-hidden">
+      <div className="relative max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 md:gap-4">
+        {/* Left: Logo & Slogan */}
+        <div className="flex flex-col items-center md:items-start gap-2 w-full md:w-auto">
+          <img src="/logo.png" alt="Dooschbag Logo" className="w-14 h-14 object-contain mb-1" />
+          <span className="text-xs text-zinc-400 italic text-center md:text-left">Knocking on wood since day one.</span>
+        </div>
+
+        {/* Center: Footer Links */}
+        <ul className="flex flex-wrap justify-center gap-4 sm:gap-6 text-sm uppercase font-bold text-zinc-500 w-full md:w-auto">
           {footerItems.map((item) => (
             <li key={item.name}>
               <a href={item.href} className="hover:text-white transition">
@@ -23,8 +29,8 @@ export default function Footer() {
           ))}
         </ul>
 
-        {/* Social Icons */}
-        <div className="flex gap-4 mt-4 md:mt-0">
+        {/* Right: Social Icons */}
+        <div className="flex gap-4 mt-4 md:mt-0 w-full md:w-auto justify-center md:justify-end">
           {/* YouTube Icon */}
           <a
             href="https://www.youtube.com/"
@@ -47,10 +53,20 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Copyright */}
-      <p className="text-xs text-zinc-500 text-center mt-6">
-        &copy; {new Date().getFullYear()} DOOSCHBAG. All rights reserved.
-      </p>
+      {/* Divider */}
+      <div className="border-t border-zinc-800 my-6" />
+
+      {/* Bottom Row: Legal Links & Copyright */}
+      <div className="flex flex-col sm:flex-row justify-between items-center gap-2">
+        <div className="flex gap-4 text-xs text-zinc-500">
+          <a href="/privacy-policy" className="hover:text-white transition">Privacy Policy</a>
+          <span>|</span>
+          <a href="/terms" className="hover:text-white transition">Terms</a>
+        </div>
+        <p className="text-xs text-zinc-500 text-center sm:text-right mt-2 sm:mt-0">
+          &copy; {new Date().getFullYear()} DOOSCHBAG. All rights reserved.
+        </p>
+      </div>
     </footer>
   );
 }
