@@ -14,7 +14,7 @@ export default function Footer() {
       <div className="relative max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 md:gap-4">
         {/* Left: Logo & Slogan */}
         <div className="flex flex-col items-center md:items-start gap-2 w-full md:w-auto">
-          <img src="/logo.png" alt="Dooschbag Logo" className="w-14 h-14 object-contain mb-1" />
+          <img src="/logo.png" alt="Dooschbag Logo" className="h-14 object-contain mb-1" />
           <span className="text-xs text-zinc-400 italic text-center md:text-left">Knocking on wood since day one.</span>
         </div>
 
