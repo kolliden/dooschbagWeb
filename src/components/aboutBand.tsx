@@ -25,14 +25,10 @@ export default function AboutBand() {
                 <div className="max-w-sm mx-auto text-center space-y-6 z-10 relative">
                     <h2 className="text-3xl font-extrabold text-red-500">About The Band</h2>
                     <p className="text-zinc-300">
-                        We are The Anarchy Tapes, a DIY punk band from the underground scene. Our
-                        music is raw, unfiltered, and full of energy. Expect chaotic guitar riffs,
-                        fast-paced drums, and lyrics that challenge the status quo.
+                        At a lasagne party in March 2025, Fionn got the brilliant idea, that he wanted to start a band. He ran around the party, found Freja and told her “we’re starting a punk band and it’s happening now”. He found Eamon and Leo, two munchkins from Minnesota, and next thing you know, Fionn had bought instruments off of Ebay, printed merch and gave them the name “DOOSCHBAG”.
                     </p>
                     <p className="text-zinc-300">
-                        Since our formation, we have played countless shows across Europe, spreading
-                        our message of rebellion and unity through punk music. Join us at a show, grab
-                        some merch, and become part of the movement!
+                        They played their first show in an art gallery a few days later, with 15 minutes of practice, with a bucket and a megaphone. Fionn almost got punched in the face under the ongoing premise of ‘if you knock our singer out, you get a free T-Shirt’.
                     </p>
                 </div>
 
