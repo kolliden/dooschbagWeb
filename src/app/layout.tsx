@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import SEOHead from "@/components/SEOHead";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,14 +15,6 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "DOOSCHBAG",
-  description: "DOOSCHBAG - A Punk Rock Experience",
-  icons: {
-    icon: "/favicon.ico",
-  },
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -29,10 +22,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <link rel="icon" href="/favicon.ico" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </head>
+      <SEOHead
+        title="DOOSCHBAG – Home"
+        description="Official DOOSCHBAG punk band site. Latest gigs, gallery, members and mailing list."
+        image="/media/cover.jpg"
+        url="https://yourdomain.com"
+      />
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
