@@ -28,7 +28,7 @@ export default function SEOHead({
             // "https://instagram.com/dooschbag",
             // "https://facebook.com/dooschbag"
         ],
-        event: bandData.upcomingEvents?.map((ev: any) => ({
+        event: bandData.upcomingEvents?.map((ev) => ({
             "@type": "MusicEvent",
             name: `Live at ${ev.venue}`,
             startDate: ev.date,

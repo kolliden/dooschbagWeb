@@ -24,10 +24,12 @@ export default function GalleryPage() {
       <main className="bg-black text-white relative">
         {/* Hero Section */}
         <section className="relative h-[50vh] w-full border-b border-red-500">
-          <img
+          <Image
             src={images[0]?.src || "/"}
             alt="Gallery Hero"
             className="w-full h-full object-cover opacity-40"
+            width={1920}
+            height={1080}
           />
           <div className="absolute inset-0 flex flex-col items-center justify-center">
             <h1 className="text-5xl font-extrabold text-red-500">Gallery</h1>
