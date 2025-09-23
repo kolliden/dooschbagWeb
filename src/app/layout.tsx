@@ -22,12 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <SEOHead
-        title="DOOSCHBAG – Home"
-        description="Official DOOSCHBAG punk band site. Latest gigs, gallery, members and mailing list."
-        image="/media/cover.jpg"
-        url="https://yourdomain.com"
-      />
+      <SEOHead />
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
