@@ -3,6 +3,12 @@
 import bandData from "@/data/bandData";
 import Image from "next/image";
 
+type UpcomingEvent = {
+  date: string;
+  venue: string;
+  [key: string]: unknown;
+};
+
 export default function Hero() {
   return (
     <section className="relative bg-black text-white py-12 px-4 sm:px-6 md:min-h-screen">
@@ -24,15 +30,17 @@ export default function Hero() {
 
           {/* Upcoming Shows */}
           <div className="bg-zinc-900 p-4 rounded-md shadow-lg">
-            <h2 className="text-4xl font-bold text-red-500 mb-3">
-              Upcoming Shows
-            </h2>
-            <ul className="space-y-2 text-sm">
-              {bandData.upcomingEvents.map((date, i) => (
-                <li key={i}>
-                  <span className="text-zinc-400">{date.date}</span> - {date.venue}
-                </li>
-              ))}
+            <h2 className="text-4xl font-bold text-red-500 mb-3">Upcoming Shows</h2>
+            <ul>
+              {(bandData.upcomingEvents as UpcomingEvent[]).length === 0 ? (
+                <li>No upcoming shows at the moment. Stay tuned!</li>
+              ) : (
+                (bandData.upcomingEvents as UpcomingEvent[]).map((event, i) => (
+                  <li key={i}>
+                    <span className="text-zinc-400">{event.date}</span> – {event.venue}
+                  </li>
+                ))
+              )}
             </ul>
           </div>
         </div>
@@ -51,7 +59,7 @@ export default function Hero() {
           </div>
 
           {/* Image - Hidden on Mobile */}
-            <div className="hidden md:block md:col-span-2 bg-zinc-900 rounded-md shadow-lg border border-red-900">
+          <div className="hidden md:block md:col-span-2 bg-zinc-900 rounded-md shadow-lg border border-red-900">
             <Image
               src={bandData.hero.image}
               alt="Band promo"
@@ -59,7 +67,7 @@ export default function Hero() {
               height={400}
               className="w-full h-64 md:h-80 object-cover rounded-md"
             />
-            </div>
+          </div>
         </div>
       </div>
     </section>
