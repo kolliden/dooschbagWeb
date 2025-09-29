@@ -2,6 +2,12 @@
 import Head from "next/head";
 import bandData from "@/data/bandData"; // so we can pull gigs dynamically
 
+interface Event {
+    venue: string;
+    date: string;
+    // add other properties if needed
+}
+
 interface SEOHeadProps {
     title?: string;
     description?: string;
@@ -22,13 +28,7 @@ export default function SEOHead({
         name: "DOOSCHBAG",
         genre: "Punk",
         url: url,
-        image: image,
-        sameAs: [
-            // Add your social links here if you have them:
-            // "https://instagram.com/dooschbag",
-            // "https://facebook.com/dooschbag"
-        ],
-        event: bandData.upcomingEvents?.map((ev) => ({
+        event: (bandData.upcomingEvents as Event[] | undefined)?.map((ev) => ({
             "@type": "MusicEvent",
             name: `Live at ${ev.venue}`,
             startDate: ev.date,
