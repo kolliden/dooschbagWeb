@@ -48,14 +48,17 @@ export default function Hero() {
         {/* Bottom Row */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {/* Mission */}
-          <div className="bg-zinc-900 p-4 rounded-md shadow-lg">
+          <div className="bg-zinc-900  p-6 rounded-md shadow-lg">
             <h2 className="text-4xl font-bold text-red-500 mb-3">Our Mission</h2>
-            <p
-              className="text-zinc-300 text-xl whitespace-pre-line"
-              style={{ lineHeight: "2" }}
-            >
-              {bandData.mission}
-            </p>
+            {bandData.mission.split("\n").map((line: string, idx: number) => (
+                <p
+                  key={idx}
+                  className="text-zinc-300 text-xl w-full text-justify mb-3"
+                  style={{ textAlignLast: "justify" }}
+                >
+                  {line || "\u00A0"} {/* keep empty lines from collapsing */}
+                </p>
+              ))}
           </div>
 
           {/* Image - Hidden on Mobile */}
