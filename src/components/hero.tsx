@@ -54,7 +54,7 @@ export default function Hero() {
                 <p
                   key={idx}
                   className="text-zinc-300 text-xl w-full text-justify mb-3"
-                  style={{ textAlignLast: "justify" }}
+                  // style={{ textAlignLast: "justify" }}
                 >
                   {line || "\u00A0"} {/* keep empty lines from collapsing */}
                 </p>
