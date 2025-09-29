@@ -5,7 +5,7 @@ const bandData = {
         image: "/media/dooschbag-bg.png",
     },
     mission:
-        "We are here to bring raw punk energy, rebellious spirit, and a wall of sound that never stops.",
+        "THE GREATEST HARDCORE \n WE NEVER PRACTICE \n BOOK US FOR A SHOW \n NEW MERCH EVERY TIME",
     timeline: [
         { date: "March 22, 2025", venue: "Symposia - Berlin", image: "/timeline/symposia-berlin.jpg" },
         { date: "April 5, 2025", venue: "Birkensause - Stuttgart", image: "/timeline/birkensause-stuttgart.jpg" },

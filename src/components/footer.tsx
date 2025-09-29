@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 
 const footerItems = [
     { name: "Gallery", href: "/gallery", isPage: true },
@@ -12,9 +13,16 @@ export default function Footer() {
   return (
     <footer className="bg-zinc-900 text-zinc-300 py-8 px-4 sm:px-6 relative overflow-hidden">
       <div className="relative max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 md:gap-4">
-        {/* Left: Logo & Slogan */}
         <div className="flex flex-col items-center md:items-start gap-2 w-full md:w-auto">
-          <img src="/logo.png" alt="Dooschbag Logo" className="h-14 object-contain mb-1" />
+        {/* Left: Logo & Slogan */}
+          <Image
+            src="/logo.png"
+            alt="Dooschbag Logo"
+            width={56}
+            height={28}
+            className="h-14 w-full object-contain mb-1"
+            priority
+          />
           <span className="text-xs text-zinc-400 italic text-center md:text-left">Knocking on wood since day one.</span>
         </div>
 

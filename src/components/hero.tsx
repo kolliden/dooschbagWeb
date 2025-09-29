@@ -24,7 +24,7 @@ export default function Hero() {
 
           {/* Upcoming Shows */}
           <div className="bg-zinc-900 p-4 rounded-md shadow-lg">
-            <h2 className="text-xl font-bold text-red-500 mb-3">
+            <h2 className="text-4xl font-bold text-red-500 mb-3">
               Upcoming Shows
             </h2>
             <ul className="space-y-2 text-sm">
@@ -41,8 +41,13 @@ export default function Hero() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {/* Mission */}
           <div className="bg-zinc-900 p-4 rounded-md shadow-lg">
-            <h2 className="text-xl font-bold text-red-500 mb-3">Our Mission</h2>
-            <p className="text-zinc-300 text-sm">{bandData.mission}</p>
+            <h2 className="text-4xl font-bold text-red-500 mb-3">Our Mission</h2>
+            <p
+              className="text-zinc-300 text-xl whitespace-pre-line"
+              style={{ lineHeight: "2" }}
+            >
+              {bandData.mission}
+            </p>
           </div>
 
           {/* Image - Hidden on Mobile */}

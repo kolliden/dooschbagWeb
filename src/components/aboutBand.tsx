@@ -4,10 +4,13 @@ import Image from "next/image";
 export default function AboutBand() {
     return (
         <>
-            <img
+            <Image
                 src="/media/stars.svg"
                 alt="Stars"
+                width={1920}
+                height={200}
                 className="w-full"
+                priority
             />
             <section className="relative bg-[#200000] text-white py-16 px-6 min-h-screen flex flex-row" id="about">
                 {/* Left Ad Banner */}
