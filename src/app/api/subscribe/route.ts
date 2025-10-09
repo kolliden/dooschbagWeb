@@ -28,8 +28,12 @@ export async function POST(req: Request) {
     });
 
     return new Response(JSON.stringify({ success: true }), { status: 200 });
-  } catch (error) {
-    console.error(error);
-    return new Response(JSON.stringify({ error: "Failed to send email" }), { status: 500 });
+} catch (error: unknown) {
+  if (error instanceof Error) {
+    console.error("Email send error:", error.message, error.stack);
+  } else {
+    console.error("Email send error:", error);
   }
+  return new Response(JSON.stringify({ error: "Failed to send email" }), { status: 500 });
+}
 }
