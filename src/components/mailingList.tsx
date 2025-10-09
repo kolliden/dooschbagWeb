@@ -42,32 +42,33 @@ export default function MailingList() {
                 onSubmit={handleSubmit}
                 className="flex flex-col sm:flex-row gap-4 w-full max-w-md"
             >
-                <input
-                    type="email"
-                    placeholder="Your email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="flex-1 px-4 py-3 rounded-md border-4 border-[#cccccc] bg-zinc-900 text-white font-bold placeholder-white focus:outline-none focus:ring-2 focus:ring-red-500 transition hover:border-red-500"
-                    required
-                />
-                <button
-                    type="submit"
-                    className="px-6 py-3 bg-red-500 text-black font-extrabold rounded-md shadow-lg hover:bg-red-600 transition transform hover:scale-105"
-                >
-                    Subscribe
-                </button>
-            </form>
+                <div className="flex flex-col w-full">
+                    <input
+                        type="email"
+                        placeholder="Your email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        className="flex-1 px-4 py-3 rounded-md border-4 border-[#cccccc] bg-zinc-900 text-white font-bold placeholder-white focus:outline-none focus:ring-2 focus:ring-red-500 transition hover:border-red-500"
+                        required
+                    />
+                    <button
+                        type="submit"
+                        className="px-6 py-3 bg-red-500 text-black font-extrabold rounded-md shadow-lg hover:bg-red-600 transition transform hover:scale-105"
+                    >
+                        Subscribe
+                    </button>
+                    {/* Message */}
+                    {message && (
+                        <p
+                            className={`mt-6 font-bold text-lg animate-pulse ${messageSuccess ? "text-green-400" : "text-red-400"
+                                }`}
+                        >
+                            {message}
+                        </p>
+                    )}
+                </div>
 
-            {/* Message */}
-            {message && (
-                <p
-                    className={`mt-6 font-bold text-lg animate-pulse ${
-                        messageSuccess ? "text-green-400" : "text-red-400"
-                    }`}
-                >
-                    {message}
-                </p>
-            )}
+            </form>
         </section>
     );
 }
