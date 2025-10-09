@@ -1,4 +1,4 @@
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
 
 export async function POST(req: Request) {
   const { email } = await req.json();
@@ -7,23 +7,13 @@ export async function POST(req: Request) {
     return new Response(JSON.stringify({ error: "Email is required" }), { status: 400 });
   }
 
-  // Configure transporter (use environment variables for credentials)
-  const transporter = nodemailer.createTransport({
-    host: process.env.SMTP_HOST,
-    port: Number(process.env.SMTP_PORT),
-    secure: process.env.SMTP_SECURE === "true", // true for 465, false for other ports
-    auth: {
-      user: process.env.SMTP_USER,
-      pass: process.env.SMTP_PASS,
-    },
-  });
+const resend = new Resend(process.env.RESEND_API_KEY);
 
   try {
-    await transporter.sendMail({
-      from: `"Band Signup" <${process.env.SMTP_USER}>`,
-      to: process.env.CLIENT_EMAIL, // your client email
+    await resend.emails.send({
+      from: "Band Signup <noreply@resend.dev>",
+      to: "" + process.env.CLIENT_EMAIL,
       subject: "New Mailing List Signup",
-      text: `New user signed up: ${email}`,
       html: `<p>New user signed up: <strong>${email}</strong></p>`,
     });
 
