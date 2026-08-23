@@ -17,7 +17,7 @@ const bandData = {
 
     ],
     upcomingEvents: [
-        // { date: "Nov 10, 2025", venue: "DIY Fest - Amsterdam" },
+        { date: "September 18, 2026", venue: "RamBam, Nijmegen" },
         // { date: "Dec 5, 2025", venue: "Punk X-mas - Berlin" },
     ],
     members: [
